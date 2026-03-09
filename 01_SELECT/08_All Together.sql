@@ -1,0 +1,11 @@
+--PROBLEM STATEMENT  
+/* Calculate the average score for each country considering only customers with a score not equal to 0 and return only those countries with an average score greater than 430
+   and sort the results by the highest average score first.*/
+SELECT
+  country,
+  AVG(score) AS Average_Score
+FROM customers
+WHERE score != 0
+GROUP BY country
+HAVING AVG(score) > 430
+ORDER BY AVG(score) DESC;
